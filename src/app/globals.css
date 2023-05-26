@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#searchInput {
-  display: none;
-}
-
 .hex {
   display: inline-block;
   position: relative;
@@ -14,7 +10,14 @@
   background: grey;
   border-radius: 20px;
   box-sizing: border-box;
-  -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  -webkit-clip-path: polygon(
+    0% 50%,
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%
+  );
   -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
   clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
 }
@@ -25,7 +28,14 @@
   left: 2px; /* equal to border thickness */
   width: 116px; /* container height - (border thickness * 2) */
   height: 99.92px; /* container height - (border thickness * 2) */
-  -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  -webkit-clip-path: polygon(
+    0% 50%,
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%
+  );
   -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
   clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
 }
@@ -33,11 +43,19 @@
 .hex img {
   width: 101px; /* container height - (border thickness * 2) */
   height: 88.92px; /* container height - (border thickness * 2) */
-  -webkit-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+  -webkit-clip-path: polygon(
+    0% 50%,
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%
+  );
   -moz-clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
   clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
 }
 
 svg {
   max-height: 2rem;
+  fill: #fff;
 }
