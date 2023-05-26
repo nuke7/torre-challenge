@@ -1,15 +1,13 @@
 "use client";
-import { useRef } from "react";
+import { useSearchContext } from "@/context/SearchContext";
+import { useState } from "react";
 
 const Navbar = () => {
-  const ref = useRef<HTMLInputElement>(null);
+  const [showInput, setShowInput] = useState(false)
+  const {username, handleUsername,  fetchSkills} = useSearchContext();
 
-  const toggleFunction = () => {
-    const x: HTMLInputElement = ref.current!;
-      x.style.display = "flex";
-  };
   return (
-    <div className="flex justify-between px-4 py-2">
+    <div className="flex justify-between px-4 py-2 shadow-md">
       <div className="flex gap-4">
         <p>hamburger placeholder</p>
         <div className="flex">
@@ -19,8 +17,8 @@ const Navbar = () => {
       </div>
       <div className="flex gap-4">
         <div className="flex flex-col items-end gap-1">
-          <input id="searchInput" ref={ref} type="text" placeholder="username" className="text-black" />
-          <button onClick={toggleFunction}>search</button>
+          {showInput && <input type="text" placeholder="username" className="text-black" value={username} onChange={(e) => handleUsername(e.target.value)}/>}
+          <button onClick={() => {setShowInput(!showInput), fetchSkills(username)}}>search</button>
         </div>
         <p>SIGN IN</p>
       </div>
