@@ -1,7 +1,7 @@
 "use client"
 import React, { ReactNode, useEffect, useState } from 'react'
 import { searchContext } from './SearchContext'
-import { BioData, IStrengths } from '@/assets/models'
+import { IStrengths } from '@/assets/models'
 
 interface SearchContextProviderProps {
 	children: ReactNode

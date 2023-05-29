@@ -1,5 +1,5 @@
 "use client";
-import { BioData, IStrengths } from "@/assets/models";
+import { IStrengths } from "@/assets/models";
 import { createContext, useContext } from "react";
 
 interface searchContext {
