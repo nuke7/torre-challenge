@@ -9,7 +9,7 @@ const Navbar = () => {
   const { username, handleUsername, fetchSkills } = useSearchContext();
 
   return (
-    <div className="flex justify-between px-4 py-2 shadow-md">
+    <div className="flex justify-between md:flex-row flex-col px-4 py-2 shadow-md">
       <div className="flex gap-4">
         <p>hamburger placeholder</p>
         <div className="flex">
@@ -18,12 +18,12 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex items-center gap-4">
-        <div className="flex flex-col md:flex-row items-end md:items-center">
+        <div className="flex flex-row items-center">
           {showInput && (
             <input
               type="text"
               placeholder="username"
-              className="text-black"
+              className="text-black block w-32 md:w-auto px-2 py-1 rounded-md"
               value={username}
               onChange={(e) => handleUsername(e.target.value)}
               onKeyDown={(e) => {
