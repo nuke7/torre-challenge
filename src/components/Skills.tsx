@@ -1,5 +1,6 @@
 "use client";
 
+import LoadingPage from "@/app/loading";
 import {
   BeginnerSvg,
   ExpertSvg,
@@ -11,19 +12,17 @@ import {
 import { useSearchContext } from "@/context/SearchContext";
 
 const Skills = () => {
-  const { data } = useSearchContext();
+  const { data, loading } = useSearchContext();
 
   const master = data.filter((strength) => strength.proficiency === "master");
   const expert = data.filter((strength) => strength.proficiency === "expert");
-  const proficient = data.filter(
-    (strength) => strength.proficiency === "proficient"
-  );
+  const proficient = data.filter((strength) => strength.proficiency === "proficient");
   const beginner = data.filter((strength) => strength.proficiency === "novice");
   const interested = data.filter(
     (strength) => strength.proficiency === "no-experience-interested"
   );
 
-  if (data.length > 0) {
+  if (data.length > 0 && loading === false) {
     return (
       <>
         <h1 className="text-lg my-4">Skills and interests: </h1>
@@ -150,12 +149,9 @@ const Skills = () => {
       </>
     );
   } else {
-    return (
-      <>
-        <p>no data</p>
-      </>
-    );
+    return <LoadingPage />;
   }
 };
 
 export default Skills;
+

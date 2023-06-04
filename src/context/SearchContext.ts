@@ -6,6 +6,7 @@ interface searchContext {
   username: string;
   data: IStrengths[];
   personData: IPersonData;
+  loading: boolean;
   handleUsername: (search: string) => void;
   fetchSkills: (username: string) => void;
 }
@@ -18,6 +19,7 @@ export const searchContext = createContext<searchContext>({
     name: "",
     pictureThumbnail: "",
   },
+  loading: false,
   fetchSkills: (username: string) => Promise.resolve([]),
 });
 

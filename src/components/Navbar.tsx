@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
+
 import { useSearchContext } from "@/context/SearchContext";
 import { useState } from "react";
 
@@ -15,8 +17,8 @@ const Navbar = () => {
           <p>.co</p>
         </div>
       </div>
-      <div className="flex gap-4">
-        <div className="flex flex-col items-end gap-1">
+      <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row items-end md:items-center">
           {showInput && (
             <input
               type="text"
@@ -24,14 +26,20 @@ const Navbar = () => {
               className="text-black"
               value={username}
               onChange={(e) => handleUsername(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  fetchSkills(username);
+                }
+              }}
             />
           )}
           <button
+            className="bg-black text-white px-4 py-2 mx-1 rounded-md"
             onClick={() => {
-              setShowInput(!showInput), fetchSkills(username);
+              setShowInput(!showInput);
             }}
           >
-            search
+            {showInput ? "X" : "SEARCH"}
           </button>
         </div>
         <p>SIGN IN</p>

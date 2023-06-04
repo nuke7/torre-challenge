@@ -10,6 +10,7 @@ interface SearchContextProviderProps {
 const SearchContextProvider = ({ children }: SearchContextProviderProps) => {
   const [username, setUsername] = useState("");
   const [data, setData] = useState<IStrengths[]>([]);
+  const [loading, setloading] = useState(false);
   const [personData, setPersonData] = useState<IPersonData>({
     name: "Alexander Torrenegra",
     pictureThumbnail:
@@ -17,12 +18,14 @@ const SearchContextProvider = ({ children }: SearchContextProviderProps) => {
   });
 
   const fetchSkills = async (username: string = "torrenegra") => {
+    setloading(true);
     const res = await fetch(`https://torre-backend-3eon.onrender.com/data/${username}`);
     const data = await res.json();
     let strengths: IStrengths[] = [];
     data.strengths.forEach((item: IStrengths) => strengths.push(item));
     setData(strengths);
     setPersonData(data.person);
+    setloading(false);
   };
 
   useEffect(() => {
@@ -34,14 +37,9 @@ const SearchContextProvider = ({ children }: SearchContextProviderProps) => {
     setUsername(value);
   };
 
-  const contextValue = {
-    username,
-    handleUsername,
-  };
-
   return (
     <searchContext.Provider
-      value={{ username, handleUsername, data, fetchSkills, personData }}
+      value={{ username, handleUsername, data, fetchSkills, personData, loading }}
     >
       {children}
     </searchContext.Provider>

@@ -1,6 +1,10 @@
 export const WeightSvg = () => {
   return (
-    <div data-v-5b287112="" data-v-2916fbe7="" data-v-f69cad92="">
+    <div
+      data-v-5b287112=""
+      data-v-2916fbe7=""
+      data-v-f69cad92=""
+    >
       <svg
         data-v-5b287112=""
         width="20"
@@ -17,7 +21,10 @@ export const WeightSvg = () => {
           fill="none"
           fill-rule="evenodd"
         >
-          <g data-v-5b287112="" id="Add-weight-Copy">
+          <g
+            data-v-5b287112=""
+            id="Add-weight-Copy"
+          >
             <g
               data-v-5b287112=""
               id="baseline-add_circle-24px-(1)"
@@ -37,7 +44,11 @@ export const WeightSvg = () => {
                 fill="rgba(255,255,255,0.65)"
               ></path>
             </g>{" "}
-            <g data-v-5b287112="" id="ic_weight-copy" opacity="1">
+            <g
+              data-v-5b287112=""
+              id="ic_weight-copy"
+              opacity="1"
+            >
               <polygon
                 data-v-5b287112=""
                 id="Shape"
@@ -107,3 +118,4 @@ export const InterestedSvg = () => {
     </span>
   );
 };
+
