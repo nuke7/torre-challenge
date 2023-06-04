@@ -3,6 +3,7 @@
 
 import { useSearchContext } from "@/context/SearchContext";
 import { useState } from "react";
+import { RxMagnifyingGlass } from "react-icons/rx";
 
 const Navbar = () => {
   const [showInput, setShowInput] = useState(false);
@@ -39,7 +40,7 @@ const Navbar = () => {
               setShowInput(!showInput);
             }}
           >
-            {showInput ? "X" : "SEARCH"}
+            {showInput ? "X" : <RxMagnifyingGlass className="text-2xl" />}
           </button>
         </div>
         <p>SIGN IN</p>
